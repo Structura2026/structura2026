@@ -13,6 +13,30 @@ body {
   padding: 40px 20px;
 }
 
+/* HEADER */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 40px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+/* LOGO */
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 45px;
+  width: auto;
+}
+
 /* 🧭 Navigation */
 nav {
   margin-bottom: 30px;
