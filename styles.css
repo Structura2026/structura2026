@@ -27,14 +27,9 @@ body {
 
 /* LOGO */
 
-.logo-link {
-  display: flex;
-  align-items: center;
-}
-
 .site-logo {
-  height: 45px;
-  width: 45px;
+  height: 100px;
+  width: 100px;
 }
 
 /* 🧭 Navigation */
