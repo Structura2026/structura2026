@@ -4,16 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found</title>
-  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <main id="content">Loading…</main>
 
   <script type="module">
-    import { initPage } from "./assets/js/render.js";
+    import { initPage } from "render.js";
     // Set this to the actual uid of your one "error404" document in Prismic —
     // must match SPECIAL_PATH_UIDS["/404.html"] in the Worker.
-    initPage("error404", "404");
+    initPage("error404");
   </script>
 </body>
 </html>
