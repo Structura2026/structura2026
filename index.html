@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading…</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main id="content">Loading…</main>
+
+  <script type="module">
+    import { initPage } from "./assets/js/render.js";
+    // Set this to the actual uid of your one "index" document in Prismic —
+    // must match SPECIAL_PATH_UIDS["/"] in the Worker.
+    initPage("index", "home");
+  </script>
+</body>
+</html>

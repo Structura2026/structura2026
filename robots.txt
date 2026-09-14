@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Disallow: /structura2026/page.html?type=private
