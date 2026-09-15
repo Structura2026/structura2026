@@ -4,7 +4,7 @@ import { SITE_NAV } from "./site nav.js";
 // bots get served fully-rendered HTML directly by the Worker before this
 // script ever runs, per your Worker's page.html interception).
 
-const WORKER_API = "https://structura.structura2026.workers.dev/";
+const WORKER_API = "https://structura.structura2026.workers.dev";
 
 async function fetchPage(type, uid) {
   const params = new URLSearchParams({ type });
