@@ -9,7 +9,7 @@
  */
 
 export const SITE_NAV = [
-  { type: "index", mode: "single", label: "Index" },
+  { type: "index", mode: "single", uid: "index", label: "Index" },
 
   {
     type: "news", mode: "single", label: "News",
