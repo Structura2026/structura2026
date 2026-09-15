@@ -139,7 +139,7 @@ export const SITE_NAV = [
     type: "bots_ai", mode: "single", label: "Bots_AI",
     children: [
       { type: "rules_guidelines_bots_ai", mode: "single", label: "Rules_guidelines_bots_AI" },
-      { type: "allowed_blocked_bots_ai", mode: "single", label: "Allowed_blocked_ bots_AI" },
+      { type: "allowed_blocked_bots_ai", mode: "single", label: "Allowed_blocked_bots_AI" },
       { type: "price_for_bots_ai", mode: "single", label: "Price_for_bots_AI" },
       { type: "knowledge_graph", mode: "single", label: "Knowledge_graph" },
       { type: "machine_readable_files", mode: "single", label: "Machine_readable_files" },
