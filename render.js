@@ -1,4 +1,4 @@
-import { SITE_NAV } from "site nav.js";
+import { SITE_NAV } from "./site nav.js";
 
 // Base URL of your Cloudflare Worker's JSON API (used by real browsers;
 // bots get served fully-rendered HTML directly by the Worker before this
