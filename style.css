@@ -1,3 +1,21 @@
+/* Site header */
+#site-header {
+  width: 100%;
+}
+
+/* Logo */
+#logo-link {
+  display: block;
+  width: fit-content;
+  margin: 20px 0 15px 20px;
+}
+
+#site-logo {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
 /* Navigation bar */
 #nav {
   display: flex;
