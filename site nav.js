@@ -42,6 +42,7 @@ type: "news",
   uid: "about_my_blog",
   label: "About_my_blog",
   children: [
+    { type: "value_proposition", mode: "single", uid: "value_proposition", label: "Value_proposition" },
     { type: "privacy_policy", mode: "single", uid: "privacy_policy", label: "Privacy_policy" },
     { type: "sustainability", mode: "single", uid: "sustainability", label: "Sustainability" },
     { type: "accessibility", mode: "single", uid: "accessibility", label: "Accessibility" },
@@ -117,6 +118,7 @@ type: "navigation",
 
   { type: "testimonials", mode: "single", uid: "testimonials", label: "Testimonials" },
   { type: "website_statistics", mode: "single", uid: "website_statistics", label: "Webpage_statistics" },
+  { type: "archive", mode: "single", uid: "archive", label: "Archive" },
 
   {
   type: "survey",
