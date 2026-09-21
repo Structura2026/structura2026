@@ -9,21 +9,22 @@ const DEFAULT_LOCALE = "en-us";
 const DANISH_LOCALE = "da-dk";
 
 function renderLanguageSwitcher(type, uid, lang) {
-  // Private pages must never receive the language switcher.
+  // Private and 404 pages must not receive the language switcher.
   if (type === "private" || type === "error_404") return "";
 
   const currentLang = lang || DEFAULT_LOCALE;
+
   const otherLang =
-    currentLang === DEFAULT_LOCALE
-      ? DANISH_LOCALE
-      : DEFAULT_LOCALE;
+    currentLang === DANISH_LOCALE
+      ? DEFAULT_LOCALE
+      : DANISH_LOCALE;
 
   const otherLabel =
     otherLang === DANISH_LOCALE
       ? "Dansk"
       : "English";
 
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams();
 
   params.set("type", type);
   params.set("uid", uid);
@@ -32,38 +33,29 @@ function renderLanguageSwitcher(type, uid, lang) {
   const href = `/structura2026/page.html?${params.toString()}`;
 
   return `
-    <div class="language-switcher">
-      <a href="${href}" aria-label="Switch language to ${otherLabel}">
-        ${otherLabel}
-      </a>
-    </div>
+    <a
+      href="${href}"
+      class="language-switcher"
+      aria-label="Switch language to ${otherLabel}"
+    >
+      ${otherLabel}
+    </a>
   `;
 }
 
-function languageSwitcherStyles() {
-  return `
-    <style>
-      .language-switcher {
-        margin: 10px 0 20px 0;
-        font-size: 0.95rem;
-      }
-
-      .language-switcher a {
-        text-decoration: none;
-      }
-
-      .language-switcher a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  `;
-}
-
-async function fetchPage(type, uid) {
+async function fetchPage(type, uid, lang) {
   const params = new URLSearchParams({ type });
+
   if (uid) params.set("uid", uid);
+
+  params.set("lang", lang || DEFAULT_LOCALE);
+
   const res = await fetch(`${WORKER_API}/api/page?${params}`);
-  if (!res.ok) throw new Error(`Failed to load ${type}/${uid}: ${res.status}`);
+
+  if (!res.ok) {
+    throw new Error(`Failed to load ${type}/${uid}/${lang}: ${res.status}`);
+  }
+
   return res.json();
 }
 
@@ -174,12 +166,41 @@ function escapeHtml(str) {
    NAV BAR — built from SITE_NAV (top-level entries only; children
    render as inline links inside each page's own content, not here)
    ============================================================ */
-function renderNavBar(container) {
+function renderNavBar(container, currentLang, currentType, currentUid) {
   const links = SITE_NAV.map((entry) => {
-    const uidParam = entry.uid ? `&uid=${encodeURIComponent(entry.uid)}` : "";
-    return `<a href="/structura2026/page.html?type=${encodeURIComponent(entry.type)}${uidParam}">${entry.label}</a>`;
+    const uidParam = entry.uid
+      ? `&uid=${encodeURIComponent(entry.uid)}`
+      : "";
+
+    const langParam = `&lang=${encodeURIComponent(currentLang)}`;
+
+    return `
+      <a href="/structura2026/page.html?type=${encodeURIComponent(entry.type)}${uidParam}${langParam}">
+        ${entry.label}
+      </a>
+    `;
   }).join("");
-  container.innerHTML = links;
+
+  const languageSwitcher =
+    currentType === "private" || currentType === "error_404"
+      ? ""
+      : renderLanguageSwitcher(
+          currentType,
+          currentUid,
+          currentLang
+        );
+
+  container.innerHTML = `
+    <nav class="site-navigation">
+      <div class="site-navigation-links">
+        ${links}
+      </div>
+
+      <div class="site-language-switcher">
+        ${languageSwitcher}
+      </div>
+    </nav>
+  `;
 }
 
 /* ============================================================
@@ -187,17 +208,40 @@ function renderNavBar(container) {
    of the query string
    ============================================================ */
 export async function initPage(type, uid) {
+  const params = new URLSearchParams(window.location.search);
+
+  const currentType = type || params.get("type");
+  const currentUid = uid || params.get("uid");
+  const currentLang = params.get("lang") || DEFAULT_LOCALE;
+
   const navEl = document.getElementById("nav");
-  if (navEl) renderNavBar(navEl);
+
+  if (navEl) {
+    renderNavBar(
+      navEl,
+      currentLang,
+      currentType,
+      currentUid
+    );
+  }
 
   const contentEl = document.getElementById("content");
+
   if (!contentEl) return;
 
   try {
-    const data = await fetchPage(type, uid);
+    const data = await fetchPage(
+      currentType,
+      currentUid,
+      currentLang
+    );
+
     renderPageInto(contentEl, data);
+
   } catch (err) {
-    contentEl.innerHTML = `<p>Sorry, this page couldn't be loaded.</p>`;
+    contentEl.innerHTML =
+      `<p>Sorry, this page couldn't be loaded.</p>`;
+
     console.error(err);
   }
 }
