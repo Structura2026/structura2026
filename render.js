@@ -5,6 +5,7 @@ import { SITE_NAV } from "./site nav.js";
 // script ever runs, per your Worker's page.html interception).
 
 const WORKER_API = "https://structura.structura2026.workers.dev";
+const DEFAULT_LOCALE = "en-us";
 
 async function fetchPage(type, uid) {
   const params = new URLSearchParams({ type });
