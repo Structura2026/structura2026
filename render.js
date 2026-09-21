@@ -8,6 +8,57 @@ const WORKER_API = "https://structura.structura2026.workers.dev";
 const DEFAULT_LOCALE = "en-us";
 const DANISH_LOCALE = "da-dk";
 
+function renderLanguageSwitcher(type, uid, lang) {
+  // Private pages must never receive the language switcher.
+  if (type === "private" || type === "error_404") return "";
+
+  const currentLang = lang || DEFAULT_LOCALE;
+  const otherLang =
+    currentLang === DEFAULT_LOCALE
+      ? DANISH_LOCALE
+      : DEFAULT_LOCALE;
+
+  const otherLabel =
+    otherLang === DANISH_LOCALE
+      ? "Dansk"
+      : "English";
+
+  const params = new URLSearchParams(window.location.search);
+
+  params.set("type", type);
+  params.set("uid", uid);
+  params.set("lang", otherLang);
+
+  const href = `/structura2026/page.html?${params.toString()}`;
+
+  return `
+    <div class="language-switcher">
+      <a href="${href}" aria-label="Switch language to ${otherLabel}">
+        ${otherLabel}
+      </a>
+    </div>
+  `;
+}
+
+function languageSwitcherStyles() {
+  return `
+    <style>
+      .language-switcher {
+        margin: 10px 0 20px 0;
+        font-size: 0.95rem;
+      }
+
+      .language-switcher a {
+        text-decoration: none;
+      }
+
+      .language-switcher a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  `;
+}
+
 async function fetchPage(type, uid) {
   const params = new URLSearchParams({ type });
   if (uid) params.set("uid", uid);
