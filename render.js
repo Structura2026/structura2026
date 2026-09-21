@@ -6,6 +6,7 @@ import { SITE_NAV } from "./site nav.js";
 
 const WORKER_API = "https://structura.structura2026.workers.dev";
 const DEFAULT_LOCALE = "en-us";
+const DANISH_LOCALE = "da-dk";
 
 async function fetchPage(type, uid) {
   const params = new URLSearchParams({ type });
