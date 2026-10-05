@@ -122,7 +122,7 @@ type: "navigation",
   {
   type: "website_statistics",
   mode: "single",
-  uid: "Website_statistics",
+  uid: "website_statistics",
   label: "Website_statistics",
   children: [
     { type: "ai_statistics", mode: "single", uid: "ai_statistics", label: "AI_statistics" },
