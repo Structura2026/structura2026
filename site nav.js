@@ -43,6 +43,7 @@ type: "news",
   label: "About_my_blog",
   children: [
     { type: "value_proposition", mode: "single", uid: "value_proposition", label: "Value_proposition" },
+    { type: "my_opinion_about_ai_usage", mode: "single", uid: "my_opinion_about_ai_usage", label: "My_opinion_about_AI_usage" },
     { type: "privacy_policy", mode: "single", uid: "privacy_policy", label: "Privacy_policy" },
     { type: "sustainability", mode: "single", uid: "sustainability", label: "Sustainability" },
     { type: "accessibility", mode: "single", uid: "accessibility", label: "Accessibility" },
@@ -117,7 +118,17 @@ type: "navigation",
 },
 
   { type: "testimonials", mode: "single", uid: "testimonials", label: "Testimonials" },
-  { type: "website_statistics", mode: "single", uid: "website_statistics", label: "Webpage_statistics" },
+
+  {
+  type: "website_statistics",
+  mode: "single",
+  uid: "Website_statistics",
+  label: "Website_statistics",
+  children: [
+    { type: "ai_statistics", mode: "single", uid: "ai_statistics", label: "AI_statistics" },
+  ],
+},
+
   { type: "archive", mode: "single", uid: "archive", label: "Archive" },
 
   {
@@ -197,7 +208,16 @@ type: "navigation",
 { type: "dropshipping", mode: "single", uid: "dropshipping", label: "Dropshipping" },
 { type: "press", mode: "single", uid: "press", label: "Press" },
 { type: "donation", mode: "single", uid: "donation", label: "Donation" },
-{ type: "affiliate_marketing", mode: "single", uid: "affiliate_marketing", label: "Affiliate_marketing" },
+
+  {
+  type: "affiliate_marketing",
+  mode: "single",
+  uid: "affiliate_marketing",
+  label: "Affiliate_marketing",
+  children: [
+    { type: "partnerships", mode: "single", uid: "partnerships", label: "Partnerships" },
+  ],
+},
 
   {
   type: "dictionary_formulas_models",
@@ -250,6 +270,12 @@ type: "navigation",
       label: "Machine_readable_files",
     },
     {
+      type: "downloads",
+      mode: "single",
+      uid: "downloads",
+      label: "Downloads",
+    },
+    {
       type: "agent_card",
       mode: "single",
       uid: "agent_card",
@@ -258,7 +284,15 @@ type: "navigation",
   ],
 },
 
-  { type: "community", mode: "single", uid: "community", label: "Community" },
+  {
+  type: "community",
+  mode: "single",
+  uid: "community",
+  label: "Community",
+  children: [
+    { type: "community_creations", mode: "single", uid: "community_creations", label: "Community_creations" },
+  ],
+},
 ];
 
 /**
