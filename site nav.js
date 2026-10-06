@@ -119,15 +119,7 @@ type: "navigation",
 
   { type: "testimonials", mode: "single", uid: "testimonials", label: "Testimonials" },
 
-  {
-  type: "website_statistics",
-  mode: "single",
-  uid: "website_statistics",
-  label: "Website_statistics",
-  children: [
-    { type: "ai_statistics", mode: "single", uid: "ai_statistics", label: "AI_statistics" },
-  ],
-},
+
 
   { type: "archive", mode: "single", uid: "archive", label: "Archive" },
 
