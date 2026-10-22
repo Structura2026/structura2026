@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /structura2026/page.html?type=private
+Disallow: /structura2026/page.html?type=error_404
+Disallow: /api/page?type=private
+Disallow: /api/page?type=error_404
