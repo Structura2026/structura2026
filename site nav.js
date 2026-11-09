@@ -47,6 +47,7 @@ type: "news",
     { type: "privacy_policy", mode: "single", uid: "privacy_policy", label: "Privacy_policy" },
     { type: "sustainability", mode: "single", uid: "sustainability", label: "Sustainability" },
     { type: "accessibility", mode: "single", uid: "accessibility", label: "Accessibility" },
+    { type: "competitor_main", mode: "single", uid: "competitor_main", label: "Competitor_main" },
     ],
   },
 
