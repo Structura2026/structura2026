@@ -47,9 +47,22 @@ type: "news",
     { type: "privacy_policy", mode: "single", uid: "privacy_policy", label: "Privacy_policy" },
     { type: "sustainability", mode: "single", uid: "sustainability", label: "Sustainability" },
     { type: "accessibility", mode: "single", uid: "accessibility", label: "Accessibility" },
-    { type: "competitor_main", mode: "single", uid: "competitor_main", label: "Competitor_main" },
-    ],
-  },
+    {
+      type: "competitor_main",
+      mode: "single",
+      uid: "competitor_main",
+      label: "Competitor_main",
+      children: [
+        {
+          type: "competitor_compare",
+          mode: "single",
+          uid: "competitor_compare",
+          label: "Competitor_compare"
+        }
+      ]
+    },
+  ],
+},
 
   {
 type: "navigation",
@@ -121,11 +134,12 @@ type: "navigation",
   { type: "testimonials", mode: "single", uid: "testimonials", label: "Testimonials" },
 
   {
-  type: "website_statistics",
+  type: "website_ai_statistics_main",
   mode: "single",
-  uid: "website_statistics",
-  label: "Website_statistics",
+  uid: "website_ai_statistics_main",
+  label: "Website_AI_statistics_main",
   children: [
+    { type: "website_statistics", mode: "single", uid: "website_statistics", label: "Website_statistics" },
     { type: "ai_statistics", mode: "single", uid: "ai_statistics", label: "AI_statistics" },
   ],
 },
@@ -211,11 +225,12 @@ type: "navigation",
 { type: "donation", mode: "single", uid: "donation", label: "Donation" },
 
   {
-  type: "affiliate_marketing",
+  type: "affiliate_partnership_main",
   mode: "single",
-  uid: "affiliate_marketing",
-  label: "Affiliate_marketing",
+  uid: "affiliate_partnership_main",
+  label: "Affiliate_partnership_main",
   children: [
+    { type: "affiliate_marketing", mode: "single", uid: "affiliate_marketing", label: "Affiliate_marketing" },
     { type: "partnerships", mode: "single", uid: "partnerships", label: "Partnerships" },
   ],
 },
