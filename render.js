@@ -202,6 +202,7 @@ function createAdSlotHTML(format, position) {
   `;
 }
 
+
 function installAdStyles() {
   if (document.getElementById("structura-ad-styles")) return;
 
@@ -209,88 +210,59 @@ function installAdStyles() {
   style.id = "structura-ad-styles";
 
   style.textContent = `
-    /* General ad slot styling */
+    /* General advertisement slot styling */
 
-    .structura-ad-slot {
+    .ad-slot {
       box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 28px auto;
       overflow: hidden;
-      background: #f5f5f5;
-      border: 1px dashed #bdbdbd;
-      color: #777;
-      font-size: 12px;
       text-align: center;
     }
 
-    .structura-ad-slot__placeholder {
-      padding: 8px;
+    /* Advertisement images */
+
+    .ad-slot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin: 0 auto;
     }
 
-    /* Leaderboard: 728 x 90 */
+    .ad-slot a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 
-    .structura-ad-slot--banner {
+    /* Desktop, laptop and tablet leaderboard: 728 x 90 */
+
+    .ad-slot-leaderboard {
       width: min(728px, 100%);
       aspect-ratio: 728 / 90;
+      margin: 20px auto;
     }
 
     /* Medium rectangle: 300 x 250 */
 
-    .structura-ad-slot--rectangle {
+    .ad-slot-rectangle {
       width: min(300px, 100%);
       aspect-ratio: 300 / 250;
       margin: 36px auto;
     }
 
-    /* Mobile leaderboard replacement: 320 x 100 */
+    /* Phone leaderboard replacement: 320 x 100 */
 
     @media (max-width: 767px) {
-      .structura-ad-slot--banner {
+      .ad-slot-leaderboard {
         width: min(320px, 100%);
         aspect-ratio: 320 / 100;
       }
     }
   `;
-
-/* Actual advertisement images */
-.ad-slot img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  margin: 0 auto;
-}
-
-.ad-slot a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* Desktop, laptop and tablet leaderboard */
-.ad-slot-leaderboard {
-  width: min(728px, 100%);
-  aspect-ratio: 728 / 90;
-  margin: 20px auto;
-}
-
-/* Medium rectangle */
-.ad-slot-rectangle {
-  width: 300px;
-  max-width: 100%;
-  aspect-ratio: 300 / 250;
-  margin: 30px auto;
-}
-
-/* Phone banner */
-@media (max-width: 767px) {
-  .ad-slot-leaderboard {
-    width: min(320px, 100%);
-    aspect-ratio: 320 / 100;
-  }
-}
 
   document.head.appendChild(style);
 }
@@ -360,6 +332,8 @@ function insertMediumRectangleAds(container) {
       }
     }
   }
+   console.log("Medium rectangle ads inserted:", insertedAds,
+            "| Content elements measured:", contentBlocks.length);
 }
 
 function renderLanguageSwitcher(type, uid, lang) {
@@ -466,8 +440,6 @@ function renderPageInto(container, data, type, uid) {
 applyAdLayout(container, type, uid);
 
 applySEO(data.seo, data.title);
-
-  applySEO(data.seo, data.title);
 }
 
 /* ============================================================
@@ -482,23 +454,21 @@ function applyAdLayout(container, type, uid) {
 
   installAdStyles();
 
-  // Top banner: immediately below the navigation,
-  // before the page title.
+  // Top leaderboard or mobile banner.
   container.insertAdjacentHTML(
     "afterbegin",
-    createAdSlotHTML("banner", "top")
+    createAdSlotHTML("leaderboard", "top")
   );
 
-  // Long-form pages additionally receive three
-  // medium rectangle placements within the content.
+  // Three medium rectangle placements on long-form pages.
   if (layout === "long") {
     insertMediumRectangleAds(container);
   }
 
-  // Bottom banner: after all page content.
+  // Bottom leaderboard or mobile banner.
   container.insertAdjacentHTML(
     "beforeend",
-    createAdSlotHTML("banner", "bottom")
+    createAdSlotHTML("leaderboard", "bottom")
   );
 }
 
@@ -627,7 +597,7 @@ export async function initPage(type, uid) {
       currentLang
     );
 
-    renderPageInto(contentEl, data, type, uid);
+    renderPageInto(contentEl, data, currentType, currentUid);
 
   } catch (err) {
     contentEl.innerHTML =
