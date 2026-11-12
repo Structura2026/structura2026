@@ -135,22 +135,69 @@ function getAdLayout(type, uid) {
    ADVERTISEMENT SLOT GENERATION
    ============================================================ */
 
+const AD_ASSET_BASE =
+  "https://structura2026.github.io/structura2026/ads";
+
+const AD_BANNERS = {
+  leaderboard: {
+    desktop: `${AD_ASSET_BASE}/decorative-Structura-728x90.png`,
+    mobile: `${AD_ASSET_BASE}/decorative-Structura-320x100.png`,
+    alt: "Advertisement",
+    link: "https://structura2026.github.io/structura2026/page.html?type=buy_advertising&uid=buy_advertising&lang=en-us" // Add the advertiser's destination URL here
+  },
+
+  rectangle: {
+    image: `${AD_ASSET_BASE}/decorative-Structura-300x250.png`,
+    alt: "Advertisement",
+    link: "https://structura2026.github.io/structura2026/page.html?type=buy_advertising&uid=buy_advertising&lang=en-us" // Add the advertiser's destination URL here
+  }
+};
+
 function createAdSlotHTML(format, position) {
-  const sizes =
-    format === "banner"
-      ? "728x90,320x100"
-      : "300x250";
+  const ad = AD_BANNERS[format];
+
+  if (!ad) return "";
+
+  let imageHTML;
+
+  if (format === "leaderboard") {
+    imageHTML = `
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="${ad.mobile}"
+        >
+        <img
+          src="${ad.desktop}"
+          alt="${ad.alt}"
+          loading="lazy"
+        >
+      </picture>
+    `;
+  } else {
+    imageHTML = `
+      <img
+        src="${ad.image}"
+        alt="${ad.alt}"
+        loading="lazy"
+      >
+    `;
+  }
+
+  const contentHTML = ad.link
+    ? `<a href="${ad.link}" target="_blank"
+         rel="sponsored noopener noreferrer">
+         ${imageHTML}
+       </a>`
+    : imageHTML;
 
   return `
     <div
-      class="structura-ad-slot structura-ad-slot--${format}"
+      class="ad-slot ad-slot-${format}"
       data-ad-position="${position}"
-      data-ad-sizes="${sizes}"
-      aria-label="Advertisement"
+      data-ad-sizes="${format}"
     >
-      <span class="structura-ad-slot__placeholder">
-        Advertisement
-      </span>
+      ${contentHTML}
     </div>
   `;
 }
@@ -206,6 +253,44 @@ function installAdStyles() {
       }
     }
   `;
+
+/* Actual advertisement images */
+.ad-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.ad-slot a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Desktop, laptop and tablet leaderboard */
+.ad-slot-leaderboard {
+  width: min(728px, 100%);
+  aspect-ratio: 728 / 90;
+  margin: 20px auto;
+}
+
+/* Medium rectangle */
+.ad-slot-rectangle {
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 300 / 250;
+  margin: 30px auto;
+}
+
+/* Phone banner */
+@media (max-width: 767px) {
+  .ad-slot-leaderboard {
+    width: min(320px, 100%);
+    aspect-ratio: 320 / 100;
+  }
+}
 
   document.head.appendChild(style);
 }
