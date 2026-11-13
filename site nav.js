@@ -128,6 +128,8 @@ type: "news",
         }
         ]
     { type: "rules_guidelines_ads", mode: "single", uid: "rules_guidelines_ads", label: "Rules_guidelines_ads" },
+     },
+    }
 
   { type: "software_tools", mode: "single", uid: "software_tools", label: "Software_tools" },
 
