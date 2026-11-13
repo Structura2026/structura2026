@@ -65,7 +65,7 @@ type: "news",
 },
 
   {
-type: "navigation",
+  type: "navigation",
   mode: "single",
   uid: "navigation",
   label: "Navigation",
@@ -76,11 +76,11 @@ type: "navigation",
   },
 
   {
-     type: "project_category",
-  mode: "single",
-  uid: "project_category",
-  label: "Project_category",
-  children: [
+   type: "project_category",
+   mode: "single",
+   uid: "project_category",
+   label: "Project_category",
+   children: [
     {
       type: "project_list",
       mode: "single",
@@ -94,11 +94,11 @@ type: "navigation",
           label: "Blog_post",
           children: [
             { type: "paa_qfo", mode: "single", uid: "paa_qfo", label: "PAA_QFO" },
+            { type: "video", mode: "single", uid: "video", label: "Video" },
+            { type: "podcast", mode: "single", uid: "podcast", label: "Podcast" },
+            { type: "infographic", mode: "single", uid: "infographic", label: "Infographic" },
             { type: "blog_post_twin", mode: "single", uid: "blog_post_twin", label: "blog_post_twin" },
             { type: "paa_qfo_twin", mode: "single", uid: "paa_qfo_twin", label: "PAA_QFO_twin" },
-            { type: "video", mode: "single", uid: "video", label: "Video" },
-            { type: "infographic", mode: "single", uid: "infographic", label: "Infographic" },
-            { type: "podcast", mode: "single", uid: "podcast", label: "Podcast" },
           ],
         },
       ],
@@ -114,10 +114,20 @@ type: "navigation",
   uid: "buy_advertising",
   label: "Buy_advertising",
   children: [
-    { type: "price_for_ads", mode: "single", uid: "price_for_ads", label: "Price_for_ads" },
+     {
+      type: "prices_for_advertisements",
+      mode: "single",
+      uid: "prices_for_advertisements",
+      label: "Prices_for_advertisements",
+      children: [
+        {
+          type: "price_for_ads",
+          mode: "single",
+          uid: "price_for_ads",
+          label: "Price_for_ads"
+        }
+        ]
     { type: "rules_guidelines_ads", mode: "single", uid: "rules_guidelines_ads", label: "Rules_guidelines_ads" },
-  ],
-},
 
   { type: "software_tools", mode: "single", uid: "software_tools", label: "Software_tools" },
 
