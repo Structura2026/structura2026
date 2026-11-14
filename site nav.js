@@ -108,28 +108,24 @@ type: "news",
 
   { type: "social_media", mode: "single", uid: "social_media", label: "Social_media" },
 
-  {
-  type: "buy_advertising",
-  mode: "single",
-  uid: "buy_advertising",
-  label: "Buy_advertising",
-  children: [
-     {
-      type: "prices_for_advertisements",
-      mode: "single",
-      uid: "prices_for_advertisements",
-      label: "Prices_for_advertisements",
-      children: [
-        {
-          type: "price_for_ads",
-          mode: "single",
-          uid: "price_for_ads",
-          label: "Price_for_ads"
-        }
-        ]
-    { type: "rules_guidelines_ads", mode: "single", uid: "rules_guidelines_ads", label: "Rules_guidelines_ads" },
-     },
-    }
+    {
+    type: "buy_advertising",
+    mode: "single",
+    uid: "buy_advertising",
+    label: "Buy_advertising",
+    children: [
+      {
+        type: "prices_for_advertisements",
+        mode: "single",
+        uid: "prices_for_advertisements",
+        label: "Prices_for_advertisements",
+        children: [
+          { type: "price_for_ads", mode: "single", uid: "price_for_ads", label: "Price_for_ads" },
+        ],
+      },
+      { type: "rules_guidelines_ads", mode: "single", uid: "rules_guidelines_ads", label: "Rules_guidelines_ads" },
+    ],
+  },
 
   { type: "software_tools", mode: "single", uid: "software_tools", label: "Software_tools" },
 
