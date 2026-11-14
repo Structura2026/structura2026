@@ -4,3 +4,5 @@ Disallow: /structura2026/page.html?type=private
 Disallow: /structura2026/page.html?type=error_404
 Disallow: /api/page?type=private
 Disallow: /api/page?type=error_404
+
+Sitemap: https://structura2026.github.io/structura2026/sitemap.xml
