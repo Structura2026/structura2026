@@ -9,6 +9,32 @@ const DEFAULT_LOCALE = "en-us";
 const DANISH_LOCALE = "da-dk";
 
 /* ============================================================
+   SEO TAG INJECTION — canonical, hreflang, title, description
+   ============================================================ */
+const SITE_BASE = "https://structura2026.github.io/structura2026/page.html";
+
+function setSeoTags(type, uid, lang) {
+  const canonicalUrl = `${SITE_BASE}?type=${type}&uid=${uid}&lang=${lang}`;
+  const enUrl = `${SITE_BASE}?type=${type}&uid=${uid}&lang=en-us`;
+  const daUrl = `${SITE_BASE}?type=${type}&uid=${uid}&lang=da-dk`;
+
+  // Canonical
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.href = canonicalUrl;
+
+  // hreflang alternates
+  const enAlt = document.querySelector('link[rel="alternate"][hreflang="en"]');
+  const daAlt = document.querySelector('link[rel="alternate"][hreflang="da"]');
+  if (enAlt) enAlt.href = enUrl;
+  if (daAlt) daAlt.href = daUrl;
+
+  // Title & description (basic fallback; customize per page type if desired)
+  document.title = `${type} - Structura`;
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.content = `Structura - ${type} page`;
+}
+
+/* ============================================================
    ADVERTISEMENT CONFIGURATION
    ============================================================ */
 
@@ -574,6 +600,9 @@ export async function initPage(type, uid) {
   const currentType = type || params.get("type");
   const currentUid = uid || params.get("uid");
   const currentLang = params.get("lang") || DEFAULT_LOCALE;
+
+  // Inject SEO tags (canonical, hreflang, title, description)
+  setSeoTags(currentType, currentUid, currentLang);
 
   const navEl = document.getElementById("nav");
 
