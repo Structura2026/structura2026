@@ -4,19 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loading…</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" href="data:,">
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5BNB9GQS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
+  
+ <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./consent.css">
+<link rel="icon" href="data:,">
 </head>
+
 <body>
 <div id="site-header">
     <img src="./assets/Nyt hjemmesidelogo (logo.com).png" alt="Structura" id="site-logo">
-  </a>
 
   <nav id="nav"></nav>
 </div>
@@ -24,10 +20,15 @@
 <main id="content">Loading…</main>
 
   <script type="module">
-    import { initPage } from "./render.js";
-    // Set this to the actual uid of your one "index" document in Prismic —
-    // must match SPECIAL_PATH_UIDS["/"] in the Worker.
-    initPage("index", "index");
-  </script>
+  import { initConsent } from "./consent.js";
+  import { initPage } from "./render.js";
+
+  // Initialise cookie consent before loading the page.
+  initConsent();
+
+  // Set this to the actual uid of your one "index" document in Prismic —
+  // must match SPECIAL_PATH_UIDS["/"] in the Worker.
+  initPage("index", "index");
+</script>
 </body>
 </html>
