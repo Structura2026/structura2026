@@ -9,6 +9,7 @@
   <link rel="alternate" hreflang="en" href="">
   <link rel="alternate" hreflang="da" href="">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./consent.css">
   <link rel="icon" href="data:,">
 </head>
   
@@ -21,18 +22,22 @@
 
 <main id="content">Loading…</main>
 
-  <script type="module">
-    import { initPage } from "./render.js";
+ <script type="module">
+  import { initConsent } from "./consent.js";
+  import { initPage } from "./render.js";
 
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get("type");
-    const uid = params.get("uid");
+  // Initialise cookie consent before loading the page.
+  initConsent();
 
-    if (!type) {
-      document.getElementById("content").innerHTML = "<p>Missing page type.</p>";
-    } else {
-      initPage(type, uid);
-    }
-  </script>
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+  const uid = params.get("uid");
+
+  if (!type) {
+    document.getElementById("content").innerHTML = "<p>Missing page type.</p>";
+  } else {
+    initPage(type, uid);
+  }
+</script>
 </body>
 </html>
