@@ -204,8 +204,18 @@ function loadGoogleTagManager() {
 }
 
 function applyConsent() {
+  // Update Google's consent state first.
   updateGoogleConsentMode();
 
+  // Send the visitor's choices to Google Tag Manager.
+  window.dataLayer.push({
+    event: "structura_consent_update",
+    consent_statistics: currentConsent.statistics,
+    consent_marketing: currentConsent.marketing
+  });
+
+  // Load GTM only if at least one optional category
+  // has been accepted.
   if (currentConsent.statistics || currentConsent.marketing) {
     loadGoogleTagManager();
   }
