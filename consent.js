@@ -1,5 +1,4 @@
-
-const GTM_ID = "GTM-5BNB9GQS";
+const GTM_ID = "GTM-NWQKQ2L3";
 
 const CONSENT_STORAGE_KEY = "structura_cookie_consent";
 const CONSENT_VERSION = 1;
@@ -204,21 +203,20 @@ function loadGoogleTagManager() {
 }
 
 function applyConsent() {
-  // Update Google's consent state first.
+  // Update Google's consent state.
   updateGoogleConsentMode();
 
-  // Send the visitor's choices to Google Tag Manager.
+  // Load GTM if at least one optional category is accepted.
+  if (currentConsent.statistics || currentConsent.marketing) {
+    loadGoogleTagManager();
+  }
+
+  // Send the visitor's choices to GTM.
   window.dataLayer.push({
     event: "structura_consent_update",
     consent_statistics: currentConsent.statistics,
     consent_marketing: currentConsent.marketing
   });
-
-  // Load GTM only if at least one optional category
-  // has been accepted.
-  if (currentConsent.statistics || currentConsent.marketing) {
-    loadGoogleTagManager();
-  }
 }
 
 /* --------------------------------------------------
