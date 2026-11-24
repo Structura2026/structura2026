@@ -600,6 +600,8 @@ export async function initPage(type, uid) {
   const currentType = type || params.get("type");
   const currentUid = uid || params.get("uid");
   const currentLang = params.get("lang") || DEFAULT_LOCALE;
+  document.documentElement.lang =
+  currentLang === DANISH_LOCALE ? "da" : "en";
 
   // Inject SEO tags (canonical, hreflang, title, description)
   setSeoTags(currentType, currentUid, currentLang);
