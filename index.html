@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>
+  const pageLocale =
+    new URLSearchParams(window.location.search).get("lang") || "en-us";
+
+  document.documentElement.lang =
+    pageLocale === "da-dk" ? "da" : "en";
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loading…</title>
