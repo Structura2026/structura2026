@@ -121,6 +121,42 @@
 <xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=work_philosophy_test_results&amp;uid=work_philosophy_test_results&amp;lang=en-us" />
 </url>
 
+<!-- My opinion about AI usage page -->
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=en-us</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=en-us" />
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=da-dk" />
+</url>
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=da-dk</loc>
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=da-dk" />
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=en-us" />
+</url>
+
+<!-- AI usage test results page -->
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=ai_usage_test_results&amp;uid=ai_usage_test_results&amp;lang=en-us</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=ai_usage_test_results&amp;uid=ai_usage_test_results&amp;lang=en-us" />
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=ai_usage_test_results&amp;uid=ai_usage_test_results&amp;lang=da-dk" />
+</url>
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=ai_usage_test_results&amp;uid=ai_usage_test_results&amp;lang=da-dk</loc>
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=ai_usage_test_results&amp;uid=ai_usage_test_results&amp;lang=da-dk" />
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=ai_usage_test_results&amp;uid=ai_usage_test_results&amp;lang=en-us" />
+</url>
+
+<!-- contact page -->
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=contact&amp;uid=contact&amp;lang=en-us</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=contact&amp;uid=contact&amp;lang=en-us" />
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=contact&amp;uid=contact&amp;lang=da-dk" />
+</url>
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=contact&amp;uid=contact&amp;lang=da-dk</loc>
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=contact&amp;uid=contact&amp;lang=da-dk" />
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=contact&amp;uid=contact&amp;lang=en-us" />
+</url>
+
 <!-- About my blog page -->
 <url>
 <loc>https://structura2026.github.io/structura2026/page.html?type=about_my_blog&amp;uid=about_my_blog&amp;lang=en-us</loc>
@@ -145,18 +181,6 @@
 <xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=value_proposition&amp;uid=value_proposition&amp;lang=en-us" />
 </url>
 
-<!-- My opinion about AI usage page -->
-<url>
-<loc>https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=en-us</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=en-us" />
-<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=da-dk" />
-</url>
-<url>
-<loc>https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=da-dk</loc>
-<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=da-dk" />
-<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=my_opinion_about_ai_usage&amp;uid=my_opinion_about_ai_usage&amp;lang=en-us" />
-</url>
-
 <!-- Privacy policy page -->
 <url>
 <loc>https://structura2026.github.io/structura2026/page.html?type=privacy_policy&amp;uid=privacy_policy&amp;lang=en-us</loc>
@@ -169,6 +193,18 @@
 <xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=privacy_policy&amp;uid=privacy_policy&amp;lang=en-us" />
 </url>
 
+<!-- Cookies policy page -->
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=cookies_policy&amp;uid=cookies_policy&amp;lang=en-us</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=cookies_policy&amp;uid=cookies_policy&amp;lang=en-us" />
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=cookies_policy&amp;uid=cookies_policy&amp;lang=da-dk" />
+</url>
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=cookies_policy&amp;uid=cookies_policy&amp;lang=da-dk</loc>
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=cookies_policy&amp;uid=cookies_policy&amp;lang=da-dk" />
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=cookies_policy&amp;uid=cookies_policy&amp;lang=en-us" />
+</url>
+  
 <!-- Sustainability page -->
 <url>
 <loc>https://structura2026.github.io/structura2026/page.html?type=sustainability&amp;uid=sustainability&amp;lang=en-us</loc>
@@ -877,7 +913,19 @@
 <xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=downloads&amp;uid=downloads&amp;lang=en-us" />
 </url>
 
-<!-- AI agent card page -->
+<!-- Agents page -->
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=agents&amp;uid=agents&amp;lang=en-us</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=agents&amp;uid=agents&amp;lang=en-us" />
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=agents&amp;uid=agents&amp;lang=da-dk" />
+</url>
+<url>
+<loc>https://structura2026.github.io/structura2026/page.html?type=agents&amp;uid=agents&amp;lang=da-dk</loc>
+<xhtml:link rel="alternate" hreflang="da" href="https://structura2026.github.io/structura2026/page.html?type=agents&amp;uid=agents&amp;lang=da-dk" />
+<xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=agents&amp;uid=agents&amp;lang=en-us" />
+</url>
+
+<!-- Agent card page -->
 <url>
 <loc>https://structura2026.github.io/structura2026/page.html?type=agent_card&amp;uid=agent_card&amp;lang=en-us</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://structura2026.github.io/structura2026/page.html?type=agent_card&amp;uid=agent_card&amp;lang=en-us" />
