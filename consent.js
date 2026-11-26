@@ -1,5 +1,10 @@
 const GTM_ID = "GTM-NWQKQ2L3";
 
+const POLICY_URLS = {
+  privacy: "/structura2026/privacy-policy.html",
+  cookies: "/structura2026/cookie-policy.html"
+};
+
 const CONSENT_STORAGE_KEY = "structura_cookie_consent";
 const CONSENT_VERSION = 1;
 
@@ -21,7 +26,9 @@ const translations = {
   en: {
     title: "Your privacy matters",
     description:
-      "This website uses necessary storage to function. With your permission, we may also use statistics and marketing technologies to improve the website and understand its usage.",
+    "This website uses necessary storage to function. With your permission, we may also use statistics and marketing technologies to improve the website and understand its usage.",
+    privacyPolicy: "Privacy Policy",
+    cookiePolicy: "Cookie Policy",
     acceptAll: "Accept all",
     rejectOptional: "Reject optional",
     customise: "Customise",
@@ -44,7 +51,9 @@ const translations = {
   da: {
     title: "Dit privatliv er vigtigt",
     description:
-      "Denne hjemmeside bruger nødvendige teknologier for at fungere. Med dit samtykke kan vi også bruge statistik- og markedsføringsteknologier til at forbedre hjemmesiden og forstå dens brug.",
+    "Denne hjemmeside bruger nødvendige teknologier for at fungere. Med dit samtykke kan vi også bruge statistik- og markedsføringsteknologier til at forbedre hjemmesiden og forstå dens brug.",
+    privacyPolicy: "Privatlivspolitik",
+    cookiePolicy: "Cookiepolitik",
     acceptAll: "Acceptér alle",
     rejectOptional: "Afvis valgfrie",
     customise: "Tilpas",
@@ -246,6 +255,21 @@ function createConsentUi() {
         <h2>${t.title}</h2>
 
         <p>${t.description}</p>
+        <div class="consent-policy-links">
+  <a
+    href="${POLICY_URLS.privacy}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >${t.privacyPolicy}</a>
+
+  <span aria-hidden="true">|</span>
+
+  <a
+    href="${POLICY_URLS.cookies}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >${t.cookiePolicy}</a>
+</div>
 
         <div class="consent-actions">
           <button
@@ -336,6 +360,22 @@ function createConsentUi() {
             id="consent-marketing"
           >
         </div>
+
+        <div class="consent-policy-links">
+  <a
+    href="${POLICY_URLS.privacy}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >${t.privacyPolicy}</a>
+
+  <span aria-hidden="true">|</span>
+
+  <a
+    href="${POLICY_URLS.cookies}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >${t.cookiePolicy}</a>
+</div>
 
         <div class="consent-panel-actions">
           <button
