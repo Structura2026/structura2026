@@ -270,8 +270,6 @@ function createConsentUi() {
     rel="noopener noreferrer"
   >${t.cookiePolicy}</a>
 </div>
-<div>
-</div>
         <div class="consent-actions">
           <button
             type="button"
