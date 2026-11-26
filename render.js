@@ -120,6 +120,10 @@ const STANDARD_AD_PAGE_KEYS = new Set([
   "my_personality",
   "models",
   "formulas",
+  "agents",
+  "cookies_policy",
+  "contact",
+  "ai_usage_test_results",
 ]);
 
 // Approximate height of one A4 page in CSS pixels at 96 DPI.
