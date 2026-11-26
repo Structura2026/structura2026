@@ -299,4 +299,28 @@
     right: 10px;
     bottom: 10px;
   }
+   .consent-policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.consent-policy-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.consent-policy-links a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.consent-policy-links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
 }
